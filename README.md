@@ -5,5 +5,5 @@ Consiste en escapar de un laberinto y tocar un trofeo
 
 Se puede cambiar de camara
 
-Los scripts fucionan pero los he ehhco lo ams simples posibles
+Los scripts fucionan pero los he hecho lo más simples posibles.
 Game manager debería tener mas seguridad para ser un singleton y deberia haber una maquina de estados para los estados de juego, jugando, pausado y victoria.
