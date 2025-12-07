@@ -1,16 +1,19 @@
+using System;
 using UnityEngine;
 
 public class TextureStrectch : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Renderer renderer;
+
+    private void Awake()
     {
-        
+        renderer = GetComponent<Renderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        Vector3 scale = transform.localScale;
+        renderer.material.mainTextureScale = new Vector2(scale.x, scale.y);
     }
+
 }
