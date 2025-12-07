@@ -18,7 +18,7 @@ namespace Player
 
         void Update()
         {
-            if (isPlaying == false) return;
+            if (isPlaying == false) return; // Esta linea no deja mover al jugador hasta darle al play
             float yInput = Input.GetAxis("Vertical");
             float xInput = Input.GetAxis("Horizontal");
 

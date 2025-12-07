@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
       playButton.gameObject.SetActive(false);
    }
 
-   public void ChangeCamera()//cambio de camaras al pulasr el boton
+   public void ChangeCamera()//cambio de camaras al pulsar el boton
    {
       mainCamera.gameObject.SetActive(!mainCamera.gameObject.activeSelf);
       cenitalCamera.gameObject.SetActive(!cenitalCamera.gameObject.activeSelf);
