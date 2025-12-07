@@ -8,8 +8,8 @@ namespace Player
         [Header("Variables")] 
         [SerializeField] internal float speed = 3;
         [SerializeField] internal float rotSpeed = 3;
+        public bool isPlaying;
         
-
         private CharacterController controller;
         private void Awake()
         {
@@ -18,9 +18,10 @@ namespace Player
 
         void Update()
         {
+            if (isPlaying == false) return;
             float yInput = Input.GetAxis("Vertical");
             float xInput = Input.GetAxis("Horizontal");
-            
+
             Vector3 localMove = new Vector3(0, 0, yInput);
             Vector3 move = transform.TransformDirection(localMove) * speed * Time.deltaTime;
 
@@ -29,6 +30,13 @@ namespace Player
             controller.Move(move);
             
         }
-        
+
+        private void OnTriggerEnter(Collider other) // Al tocar el trofeo ganas!
+        {
+            if (other.gameObject.CompareTag("Win"))
+            {
+                GameManager.Instance.Win();
+            }
+        }
     }
 }
